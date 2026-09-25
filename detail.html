@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Detail Buku - BukuSMP</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-content">
+
+        <div class="logo-header">
+
+            <img
+                src="Logo/logo-smp.jpg"
+                alt="Logo SMP"
+            >
+
+            <div class="judul-header">
+
+                <h1>Buku SMP</h1>
+
+                <p>
+                    Perpustakaan buku sekolah digital
+                </p>
+
+            </div>
+
+            <img
+                src="Logo/logo-pendidikan.jpg"
+                alt="Logo Pendidikan"
+            >
+
+        </div>
+
+
+        <nav class="navigasi">
+
+            <a href="index.html">
+                🏠 Beranda
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <!-- DETAIL BUKU -->
+
+    <section class="detail-buku">
+
+        <button
+            class="tombol-kembali"
+            onclick="history.back()"
+        >
+            ← Kembali
+        </button>
+
+
+        <!-- DETAIL NORMAL -->
+
+        <div
+            class="detail-card"
+            id="detailCard"
+        >
+
+            <div class="detail-cover">
+
+                <img
+                    id="detailCover"
+                    src=""
+                    alt="Cover Buku"
+                >
+
+            </div>
+
+
+            <div class="detail-info">
+
+                <p
+                    class="detail-mapel"
+                    id="detailMapel"
+                >
+                    Mata Pelajaran
+                </p>
+
+
+                <h2 id="detailJudul">
+                    Judul Buku
+                </h2>
+
+
+                <p
+                    class="detail-kelas"
+                    id="detailKelas"
+                >
+                    Kelas
+                </p>
+
+
+                <p class="detail-deskripsi">
+
+                    Buku pelajaran digital yang dapat
+                    dibaca langsung melalui BukuSMP.
+
+                </p>
+
+
+                <button
+                    id="tombolBaca"
+                    class="tombol-baca-detail"
+                >
+                    📖 Baca Buku
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            class="detail-error"
+            id="detailError"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                📚
+            </div>
+
+
+            <h2>
+                Buku tidak ditemukan
+            </h2>
+
+
+            <p>
+                Buku yang dicari mungkin sudah dipindahkan
+                atau belum tersedia di BukuSMP.
+            </p>
+
+
+            <a href="index.html">
+                ← Kembali ke Beranda
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <h3>📚 BukuSMP</h3>
+
+            <p>
+                Perpustakaan buku sekolah digital
+                untuk siswa SMP.
+            </p>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <h4>Informasi</h4>
+
+            <p>
+                Kelas 7 • Kelas 8 • Kelas 9
+            </p>
+
+            <p>
+                Membaca buku jadi lebih mudah.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 BukuSMP • Dibuat untuk belajar
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+    /*
+        Cek apakah buku ditemukan.
+        Jika tidak ditemukan,
+        tampilkan halaman error.
+    */
+
+    const judul =
+        document.getElementById("detailJudul");
+
+    const detailCard =
+        document.getElementById("detailCard");
+
+    const detailError =
+        document.getElementById("detailError");
+
+
+    function cekBuku() {
+
+        if (
+            judul.textContent ===
+            "Buku tidak ditemukan"
+        ) {
+
+            detailCard.style.display =
+                "none";
+
+            detailError.style.display =
+                "block";
+
+        }
+
+    }
+
+
+    setTimeout(
+        cekBuku,
+        100
+    );
+
+</script>
+
+
+</body>
+
+</html>
